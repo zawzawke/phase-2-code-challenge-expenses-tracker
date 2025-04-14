@@ -1,0 +1,100 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f9fc;
+  color: #333;
+  line-height: 1.6;
+  padding: 2rem;
+}
+
+/* Form Card */
+.expense-form {
+  background-color: white;
+  padding: 2px;
+  border-radius: 12px;
+  border-color: black;
+  box-shadow: black 12px;
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.expense-form input,
+.expense-form select {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.expense-form button {
+  background-color: black;
+  color: white;
+  padding: 0.75rem;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.expense-form button:hover {
+  background-color: gray;
+}
+
+/* Search Bar */
+.search-bar {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* Table */
+.expense-table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.expense-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.expense-table th,
+.expense-table td {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.expense-table th {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}
+
+/* Layout */
+.app-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.right-section {
+  flex: 1;
+}
