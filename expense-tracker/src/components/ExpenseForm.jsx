@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './ExpenseForm.css';
+import '../index.css';
 
 function ExpenseForm({ onAddExpense }) {
   const [formData, setFormData] = useState({
@@ -35,57 +35,40 @@ function ExpenseForm({ onAddExpense }) {
       <h2>ADD EXPENSE</h2>
       <p>Enter your expense details below.</p>
       <form onSubmit={handleSubmit} className="expense-form">
-        <label>
-          Expense Name:
+     
           <input
             type="text"
             name="name"
-            placeholder="e.g. Rent"
+            placeholder="Enter expense name"
             value={formData.name}
             onChange={handleChange}
           />
-        </label>
-
-        <label>
-          Description:
-          <input
+        
+         <input
             type="text"
             name="description"
-            placeholder="e.g. April Rent Payment"
+            placeholder="Enter expense description"
             value={formData.description}
             onChange={handleChange}
           />
-        </label>
-
-        <label>
-          Expense Category:
-          <select
+     
+          <input
+            type="text"
             name="category"
+            placeholder="Enter expense category"
             value={formData.category}
             onChange={handleChange}
-          >
-            <option value="">Select category</option>
-            <option value="Food">Food</option>
-            <option value="Transport">Transport</option>
-            <option value="Bills">Bills</option>
-            <option value="Shopping">Shopping</option>
-            <option value="Other">Other</option>
-          </select>
-        </label>
-
-        <label>
-          Amount:
+        
+          />
+     
           <input
             type="number"
             name="amount"
-            placeholder="e.g. 1000"
+            placeholder="Enter amount"
             value={formData.amount}
             onChange={handleChange}
           />
-        </label>
-
-        <label>
-          Date:
+       
           <div className="date-input">
             <input
               type="date"
@@ -93,9 +76,8 @@ function ExpenseForm({ onAddExpense }) {
               value={formData.date}
               onChange={handleChange}
             />
-            <span className="calendar-icon">📅</span>
           </div>
-        </label>
+       
 
         <button type="submit">Submit</button>
       </form>

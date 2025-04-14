@@ -1,5 +1,5 @@
 import React from 'react';
-import './ExpenseTable.css';
+import '../index.css';
 
 function ExpenseTable({ expenses }) {
   return (

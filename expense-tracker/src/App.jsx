@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import ExpenseForm from './components/ExpenseForm';
-import ExpenseTable from './components/ExpenseTable';
 import SearchBar from './components/SearchBar';
-import './App.css';
+import ExpenseTable from './components/ExpenseTable';
 
 function App() {
   const [expenses, setExpenses] = useState([]);
@@ -12,34 +11,31 @@ function App() {
     setExpenses([...expenses, newExpense]);
   };
 
-  const handleDeleteExpense = (index) => {
-    const updatedExpenses = expenses.filter((_, i) => i !== index);
-    setExpenses(updatedExpenses);
+  const handleSearchChange = (term) => {
+    setSearchTerm(term);
   };
 
   const filteredExpenses = expenses.filter((expense) =>
-    expense.description.toLowerCase().includes(searchTerm.toLowerCase())
+    expense.name.toLowerCase().startsWith(searchTerm.toLowerCase()) ||
+    expense.description.toLowerCase().startsWith(searchTerm.toLowerCase())
   );
 
   return (
-    <div className="app-container">
+    <>
+    <header>
       <h1>Expense Tracker</h1>
-      <p>Start taking control of your finances and life. Record, categorize and analyze your spending.</p>
-
-      <div className="main-content">
-        <div className="form-section">
+      <p>Start taking control of your finanaces and life. Record, categorize and analyze your spending</p>
+    </header>
+      <div className="app-container">
           <ExpenseForm onAddExpense={handleAddExpense} />
-        </div>
-
-        <div className="table-section">
-          <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-          <ExpenseTable
-            expenses={filteredExpenses}
-            onDelete={handleDeleteExpense}
-          />
-        </div>
+       <div className="right-section">
+          <SearchBar searchTerm={searchTerm} onSearchChange={handleSearchChange} />
+          <ExpenseTable expenses={filteredExpenses} />
+       </div>
       </div>
-    </div>
+    </>
+ 
+
   );
 }
 
